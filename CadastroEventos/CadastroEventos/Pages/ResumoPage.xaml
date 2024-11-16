@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="CadastroEventos.ResumoPage"
+             Title="Resumo do Evento"
+             BackgroundColor="#181818">
+
+    <ScrollView Padding="20">
+        <StackLayout Spacing="20">
+            <Label Text="Resumo do Evento"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="#FFFFFF"
+                   HorizontalOptions="Center"
+                   Margin="0, 30, 0, 20"/>
+
+            <Label Text="Nome do Evento"
+                   TextColor="#FFFFFF" />
+            <Frame BorderColor="#333333" BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10" HasShadow="True">
+                <Label Text="{Binding Evento.Nome}"
+                       TextColor="#FFFFFF"
+                       BackgroundColor="#2A2A2A"/>
+            </Frame>
+
+            <Label Text="Data de Início"
+                   TextColor="#FFFFFF" />
+            <Frame BorderColor="#333333" BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10" HasShadow="True">
+                <Label Text="{Binding Evento.DataInicio, StringFormat='{0:dd/MM/yyyy}'}"
+                       TextColor="#FFFFFF"
+                       BackgroundColor="#2A2A2A"/>
+            </Frame>
+
+            <Label Text="Data de Término"
+                   TextColor="#FFFFFF" />
+            <Frame BorderColor="#333333" BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10" HasShadow="True">
+                <Label Text="{Binding Evento.DataTermino, StringFormat='{0:dd/MM/yyyy}'}"
+                       TextColor="#FFFFFF"
+                       BackgroundColor="#2A2A2A"/>
+            </Frame>
+
+            <Label Text="Número de Participantes"
+                   TextColor="#FFFFFF" />
+            <Frame BorderColor="#333333" BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10" HasShadow="True">
+                <Label Text="{Binding Evento.NumeroParticipantes}"
+                       TextColor="#FFFFFF"
+                       BackgroundColor="#2A2A2A"/>
+            </Frame>
+
+            <Label Text="Local do Evento"
+                   TextColor="#FFFFFF" />
+            <Frame BorderColor="#333333" BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10" HasShadow="True">
+                <Label Text="{Binding Evento.Local}"
+                       TextColor="#FFFFFF"
+                       BackgroundColor="#2A2A2A"/>
+            </Frame>
+
+            <Label Text="Custo por Participante"
+                   TextColor="#FFFFFF" />
+            <Frame BorderColor="#333333" BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10" HasShadow="True">
+                <Label Text="{Binding Evento.CustoPorParticipante, StringFormat='R$ {0:F2}'}"
+                       TextColor="#FFFFFF"
+                       BackgroundColor="#2A2A2A"/>
+            </Frame>
+
+            <Label Text="Duração do Evento (dias)"
+                   TextColor="#FFFFFF" />
+            <Frame BorderColor="#333333" BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10" HasShadow="True">
+                <Label Text="{Binding Evento.DuracaoEmDias}"
+                       TextColor="#FFFFFF"
+                       BackgroundColor="#2A2A2A"/>
+            </Frame>
+
+            <Label Text="Custo Total do Evento"
+                   TextColor="#FFFFFF" />
+            <Frame BorderColor="#333333" BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10" HasShadow="True">
+                <Label Text="{Binding Evento.CustoTotal, StringFormat='R$ {0:F2}'}"
+                       TextColor="#FFFFFF"
+                       BackgroundColor="#2A2A2A"/>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

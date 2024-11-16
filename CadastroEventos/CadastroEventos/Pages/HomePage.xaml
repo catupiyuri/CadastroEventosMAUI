@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="CadastroEventos.HomePage"
+             Title="Cadastro de Evento"
+             BackgroundColor="#181818">
+
+    <ScrollView Padding="20">
+        <StackLayout Spacing="20">
+            <Label Text="Cadastro de Evento"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="#FFFFFF"
+                   HorizontalOptions="Center"
+                   Margin="0, 30, 0, 20"/>
+
+            <Label Text="Nome do Evento"
+                   TextColor="#FFFFFF" />
+            <Frame BorderColor="#333333" BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10" HasShadow="True">
+                <Entry Text="{Binding Evento.Nome}"
+                       Placeholder="Digite o nome do evento"
+                       TextColor="#FFFFFF"
+                       BackgroundColor="#2A2A2A"/>
+            </Frame>
+
+            <Label Text="Data de Início"
+                   TextColor="#FFFFFF" />
+            <Frame BorderColor="#333333" BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10" HasShadow="True">
+                <DatePicker Date="{Binding Evento.DataInicio}"
+                            TextColor="#FFFFFF"
+                            BackgroundColor="#2A2A2A"/>
+            </Frame>
+
+            <Label Text="Data de Término"
+                   TextColor="#FFFFFF" />
+            <Frame BorderColor="#333333" BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10" HasShadow="True">
+                <DatePicker Date="{Binding Evento.DataTermino}"
+                            TextColor="#FFFFFF"
+                            BackgroundColor="#2A2A2A"/>
+            </Frame>
+
+            <Label Text="Número de Participantes"
+                   TextColor="#FFFFFF" />
+            <Frame BorderColor="#333333" BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10" HasShadow="True">
+                <Entry Keyboard="Numeric"
+                       Text="{Binding Evento.NumeroParticipantes}"
+                       Placeholder="Número de participantes"
+                       TextColor="#FFFFFF"
+                       BackgroundColor="#2A2A2A"/>
+            </Frame>
+
+            <Label Text="Local do Evento"
+                   TextColor="#FFFFFF" />
+            <Frame BorderColor="#333333" BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10" HasShadow="True">
+                <Entry Text="{Binding Evento.Local}"
+                       Placeholder="Digite o local do evento"
+                       TextColor="#FFFFFF"
+                       BackgroundColor="#2A2A2A"/>
+            </Frame>
+
+            <Label Text="Custo por Participante"
+                   TextColor="#FFFFFF" />
+            <Frame BorderColor="#333333" BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10" HasShadow="True">
+                <Entry Keyboard="Numeric"
+                       Text="{Binding Evento.CustoPorParticipante}"
+                       Placeholder="Custo por participante"
+                       TextColor="#FFFFFF"
+                       BackgroundColor="#2A2A2A"/>
+            </Frame>
+
+            <Button Text="Cadastrar Evento"
+                    TextColor="#FFFFFF"
+                    BackgroundColor="#007ACC"
+                    Command="{Binding CadastrarEventoCommand}"
+                    Padding="15"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    Margin="0, 20, 0, 0"
+                    BorderColor="#007ACC"
+                    BorderWidth="2">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button" Binding="{Binding IsMouseOver}" Value="True">
+                        <Setter Property="BackgroundColor" Value="#005F99"/>
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
